@@ -3,6 +3,7 @@
  "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 <generatorConfiguration>
   <context id="postgres" targetRuntime="MyBatis3DynamicSql">
+  
     <jdbcConnection driverClass="org.postgresql.Driver"
         connectionURL="jdbc:postgresql://localhost:5432/qlm" 
         userId="postgres"

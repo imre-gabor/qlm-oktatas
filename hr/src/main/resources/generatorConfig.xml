@@ -1,0 +1,29 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+ "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+  <context id="postgres" targetRuntime="MyBatis3DynamicSql">
+    <jdbcConnection driverClass="org.postgresql.Driver"
+        connectionURL="jdbc:postgresql://localhost:5432/qlm" 
+        userId="postgres"
+        password="postgres"/>
+
+	<javaTypeResolver>
+		<property name="useJSR310Types" value="true"/>
+	</javaTypeResolver>
+
+    <javaModelGenerator targetPackage="hu.qlm.hr.model" targetProject="src/main/java"/>
+
+    <javaClientGenerator targetPackage="hu.qlm.hr.mapper" targetProject="src/main/java"/>
+
+    <table tableName="employee">
+    	<property name="constructorBased" value="true"/>
+    	<generatedKey column="id" identity="true" sqlStatement="JDBC" />
+    </table>
+    
+    <table tableName="hr_user">
+    	<property name="constructorBased" value="true"/>    	
+    </table>
+        
+  </context>
+</generatorConfiguration>

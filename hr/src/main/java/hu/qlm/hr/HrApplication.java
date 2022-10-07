@@ -9,6 +9,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import hu.qlm.hr.mapper.EmployeeMapper;
 import hu.qlm.hr.model.Employee;
+import hu.qlm.hr.security.InitDbService;
 import hu.qlm.hr.service.SalaryService;
 
 @SpringBootApplication
@@ -19,6 +20,9 @@ public class HrApplication implements CommandLineRunner {
 	
 	@Autowired
 	EmployeeMapper employeeMapper;
+	
+	@Autowired
+	InitDbService initDbService;
 	
 	public static void main(String[] args) {
 		SpringApplication.run(HrApplication.class, args);
@@ -40,6 +44,7 @@ public class HrApplication implements CommandLineRunner {
 		employeeMapper.insert(employee3);
 		
 		salaryService.raiseSalaryByJob("FEjl");
+		initDbService.initDb();
 	}
 
 }

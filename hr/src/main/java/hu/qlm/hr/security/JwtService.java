@@ -27,7 +27,7 @@ public class JwtService {
 				.withArrayClaim("auth",
 						userDetails.getAuthorities().stream()
 						.map(GrantedAuthority::getAuthority).toArray(String[]::new))
-				.withExpiresAt(new Date(System.currentTimeMillis() + TimeUnit.MINUTES.toMillis(2)))
+				.withExpiresAt(new Date(System.currentTimeMillis() + TimeUnit.HOURS.toMillis(2)))
 				.withIssuer(ISSUER)
 				.sign(algorithm);
 	}

@@ -7,6 +7,7 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
 import hu.qlm.currency.api.CurrencyApi;
 import hu.qlm.flights.api.FlightsApi;
 
+@EnableFeignClients(basePackageClasses = {CurrencyApi.class, FlightsApi.class})
 @SpringBootApplication
 public class BookingApplication {
 
